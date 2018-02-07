@@ -12,12 +12,14 @@ class Truck extends VehicleBase{
       //parent::__construct($owner);//para usar constructor en las clases hijas se usa la palabra reservada "parent:__construct"
       self:: $count++;
     }
-    public function move(){
-      echo "<br>TRUCK:moving".$this->type;
-    }
     public static function getTotal()
     {
       return self::$count;
+    }
+
+    public function startEngine()
+    {
+      return 'Truck : start engine';
     }
 }
 

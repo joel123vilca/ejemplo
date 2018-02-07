@@ -1,6 +1,6 @@
 <?php
 namespace Vehicles;
-class VehicleBase
+abstract class VehicleBase
 {
   protected $owner; //propiedades
   //metodos de la clase
@@ -9,6 +9,7 @@ class VehicleBase
     echo '<br>construct<br>';
   }
   public function move(){
+    echo $this->startEngine()."<br>";
     echo "<br>moving";
   }
   public function getOwner(){//para poder acceder a la propiedades protetidas
@@ -18,6 +19,6 @@ class VehicleBase
   {
     $this->owner = $ownername;
   }
+  public abstract function startEngine();
 }
-
  ?>
