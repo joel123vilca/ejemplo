@@ -17,4 +17,9 @@ $truck = new Truck('juan','Pickup');
 $truck->move();
 //echo "<br>total truck:".Truck::$count;
 echo "<br> total truck:".Truck::getTotal();
+
+$ser = serialize($car);
+$newcar = unserialize($ser);
+
+echo 'newcar:'.$newcar->getOwner();
 ?>
