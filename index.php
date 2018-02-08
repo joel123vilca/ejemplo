@@ -6,6 +6,9 @@ include 'Vehicles/ToyCar.php';
 use Vehicles\{Car, Truck, ToyCar};
 
 $car = new Car('max');
+
+echo "<br>GPS Pos :".$car->getPos();
+
 $car->move();
 echo '<br>owner car :'.$car->getOwner();
 echo "<br>1<br>";
@@ -31,7 +34,6 @@ try {
 } finally{
   echo '<br>finally';
 }
-
 
 echo '<br>newcar:'.$newcar->getOwner();
 
