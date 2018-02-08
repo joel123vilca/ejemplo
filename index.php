@@ -1,8 +1,9 @@
 <?php
 include 'Vehicles/Car.php';
 include 'Vehicles/Truck.php';
+include 'Vehicles/ToyCar.php';
 
-use Vehicles\{Car, Truck};
+use Vehicles\{Car, Truck, ToyCar};
 
 $car = new Car('max');
 $car->move();
@@ -20,6 +21,19 @@ echo "<br> total truck:".Truck::getTotal();
 
 $ser = serialize($car);
 $newcar = unserialize($ser);
+try {
+  echo "<br>class toycar";
+  $ToyCar= new ToyCar('alex');
+  $ToyCar->move();
+} catch (Exception $e) {
+  echo 'this is a toy';//exception : una nueva forma de encontrar errores
+  //log...
+} finally{
+  echo '<br>finally';
+}
 
-echo 'newcar:'.$newcar->getOwner();
+
+echo '<br>newcar:'.$newcar->getOwner();
+
+
 ?>
